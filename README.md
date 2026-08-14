@@ -1,17 +1,17 @@
-# HGS Demo – 3 Adım
+# HGS Referans Demo + Admin
 
-Bu proje yalnızca sunum/prototip amaçlıdır.
+Dosyalar:
+- index.html: müşteri demo ekranı
+- app.js: müşteri akışı ve localStorage demo kaydı
+- admin.html: ayrı demo admin paneli
+- admin.js: admin işlem listesi
+- style.css: ortak tasarım
 
 Akış:
-1. Plaka ve tutar seçimi
-2. Sabit test kartı gösterilen demo ödeme ekranı
-3. "Şu anda hizmet veremiyoruz" sonuç ekranı
+Plaka + tutar -> 18 haneli referans / AA-YY / 3 haneli kod -> demo sonuç.
 
-Güvenlik:
-- Gerçek kart verisi kabul edilmez.
-- Kart alanları salt-okunur test verisidir.
-- Backend, ödeme API'si veya veri gönderimi yoktur.
-- Gerçek HGS yüklemesi yapılmaz.
+Admin:
+admin.html dosyasını açın. Aynı tarayıcıda oluşturulan demo kayıtlarını gösterir.
 
-Çalıştırma:
-`index.html` dosyasını tarayıcıda açmanız yeterlidir.
+Not:
+Bu proje gerçek ödeme yapmaz, PTT/HGS sistemine bağlanmaz ve sunucuya veri göndermez.
