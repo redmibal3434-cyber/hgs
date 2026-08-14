@@ -1,7 +1,18 @@
 <!doctype html>
 <html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo Admin</title><link rel="stylesheet" href="style.css"></head>
 <body><header><div><strong>Demo Admin Paneli</strong><small>Yalnızca bu tarayıcıdaki demo kayıtları</small></div><a href="index.html">Müşteri Ekranı</a></header>
-<main class="admin"><div class="toolbar"><h1>Demo İşlemler</h1><button class="danger" id="clear">Demo Kayıtları Temizle</button></div>
+<main class="admin">
+<section class="settings-card">
+  <div class="settings-head"><div><span class="tag">SİTE AYARLARI</span><h2>Logo Ayarları</h2><p>Müşteri ekranının sol üstünde gösterilecek logoyu buradan ayarlayın.</p></div>
+  <div class="logo-preview-box"><img id="logoPreview" class="logo-preview hidden" alt="Logo önizleme"><span id="noLogo">Logo yok</span></div></div>
+  <div class="logo-grid">
+    <div><label>Bilgisayardan logo yükle</label><input id="logoFile" class="fileinput" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><p class="help">PNG, JPG, WebP veya GIF.</p></div>
+    <div><label>veya görsel bağlantısı</label><input id="logoUrl" type="url" placeholder="https://ornek.com/logo.png"><p class="help">Doğrudan bir görsel URL'si girin.</p></div>
+  </div>
+  <div class="settings-actions"><button class="savebtn" id="saveLogo">Logoyu Kaydet</button><button class="removebtn" id="removeLogo">Logoyu Kaldır</button></div>
+  <div id="logoMessage" class="save-message hidden">Logo ayarı kaydedildi.</div>
+</section>
+<div class="toolbar"><h1>Demo İşlemler</h1><button class="danger" id="clear">Demo Kayıtları Temizle</button></div>
 <div class="stats"><div class="stat">Toplam demo işlem<b id="count">0</b></div><div class="stat">Toplam demo tutar<b id="total">0 TL</b></div><div class="stat">Son işlem<b id="last">—</b></div></div>
 <div class="tablewrap"><table><thead><tr><th>İşlem No</th><th>Tarih</th><th>Plaka</th><th>Tutar</th><th>Referans</th><th>Geçerlilik</th><th>Kod</th><th>Durum</th></tr></thead><tbody id="tbody"></tbody></table><div class="empty hidden" id="empty">Henüz demo kayıt yok.</div></div>
-</main><footer>Demo admin • Veriler yalnızca tarayıcının localStorage alanında tutulur</footer><script src="admin.js"></script></body></html>
+</main><footer>Demo admin • Veriler yalnızca tarayıcının localStorage alanında tutulur</footer><script src="admin.js"></script><script src="settings.js"></script></body></html>

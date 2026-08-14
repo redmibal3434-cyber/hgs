@@ -1,19 +1,15 @@
-# HGS Referans Demo + Ayrı Admin
+# HGS Referans Demo – Logo Ayarlı Admin
 
-Müşteri ekranında admin paneline hiçbir bağlantı gösterilmez.
+Yeni özellik:
+- Admin panelinde Logo Ayarları bölümü
+- Bilgisayardan PNG/JPG/WebP/GIF logo seçme
+- Alternatif olarak görsel URL'si girme
+- Logo önizleme
+- Kaydet / kaldır
+- Kaydedilen logo müşteri ekranının sol üstünde görünür
 
-Dosyalar:
-- index.html — müşteri demo ekranı
-- app.js — müşteri akışı
-- admin.html — ayrı admin paneli
-- admin.js — admin işlem listesi
-- style.css — ortak tasarım
+Admin: admin.html
+Müşteri: index.html
 
-Admin paneline doğrudan `admin.html` adresinden girilir.
-
-Demo akışı:
-Plaka + tutar -> 18 haneli referans / AA-YY / 3 haneli kod -> sonuç -> Yeni Demo İşlem.
-
-Not:
-Bu proje gerçek ödeme yapmaz, PTT/HGS sistemine bağlanmaz ve sunucuya veri göndermez.
-Demo kayıtları yalnızca aynı tarayıcının localStorage alanında tutulur.
+Demo verileri ve logo ayarı aynı tarayıcının localStorage alanında tutulur.
+Gerçek ödeme veya PTT/HGS entegrasyonu yoktur.
