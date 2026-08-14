@@ -1,1 +1,25 @@
-let amount=0;function show(id){document.querySelectorAll('.card').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active')}function goAmount(){const p=document.getElementById('plate').value.trim().toUpperCase();if(p.length<5){alert('Lütfen geçerli bir plaka girin.');return}document.getElementById('plate').value=p;document.getElementById('plateText').textContent='Plaka: '+p;show('step2')}function choose(v){amount=v;document.getElementById('sumPlate').textContent=document.getElementById('plate').value;document.getElementById('sumAmount').textContent=v.toLocaleString('tr-TR')+' TL';show('step3')}function finish(){show('step4')}
+let amount=null;
+const qs=s=>document.querySelector(s);
+document.querySelectorAll('[data-amount]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('[data-amount]').forEach(x=>x.classList.remove('selected'));
+    btn.classList.add('selected'); amount=btn.dataset.amount;
+  });
+});
+qs('#toPayment').addEventListener('click',()=>{
+  const plate=qs('#plate').value.trim().toUpperCase();
+  if(!plate){alert('Demo için bir plaka girin.');return}
+  if(!amount){alert('Bir yükleme tutarı seçin.');return}
+  qs('#summaryPlate').textContent=plate;
+  qs('#summaryAmount').textContent=Number(amount).toLocaleString('tr-TR')+' TL';
+  show(2);
+});
+qs('#back').addEventListener('click',()=>show(1));
+qs('#pay').addEventListener('click',()=>show(3));
+function show(n){
+  [1,2,3].forEach(i=>{
+    qs('#page'+i).classList.toggle('hidden',i!==n);
+    qs('#s'+i).classList.toggle('active',i<=n);
+  });
+  window.scrollTo({top:0,behavior:'smooth'});
+}

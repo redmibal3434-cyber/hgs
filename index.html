@@ -1,1 +1,75 @@
-<!doctype html><html lang='tr'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>HGS Yükleme Demo</title><link rel='stylesheet' href='style.css'></head><body><header><div class='brand'>HGS <span>Yükleme Demo</span></div><div class='badge'>DEMO • Gerçek ödeme alınmaz</div></header><main><section id='step1' class='card active'><div class='steps'>1 Plaka → 2 Tutar → 3 Demo Ödeme → 4 Sonuç</div><h1>Plakanızı Girin</h1><p>HGS yükleme demosuna devam etmek için plakanızı girin.</p><input id='plate' placeholder='34 ABC 123' maxlength='12'><button onclick='goAmount()'>Devam Et</button></section><section id='step2' class='card'><div class='steps'>✓ Plaka → 2 Tutar → 3 Demo Ödeme → 4 Sonuç</div><h1>Yükleme Tutarını Seçin</h1><p id='plateText'></p><div class='amounts'><button onclick='choose(500)'>500 TL</button><button onclick='choose(1000)'>1.000 TL</button><button onclick='choose(1500)'>1.500 TL</button><button onclick='choose(2000)'>2.000 TL</button></div><button class='secondary' onclick="show('step1')">Geri Dön</button></section><section id='step3' class='card'><div class='steps'>✓ Plaka → ✓ Tutar → 3 Demo Ödeme → 4 Sonuç</div><h1>Demo Ödeme</h1><div class='warning'>Bu bir sunum demosudur. Kart bilgisi girilmez ve gerçek ödeme alınmaz.</div><div class='summary'><span>Plaka</span><b id='sumPlate'></b><span>Tutar</span><b id='sumAmount'></b></div><button onclick='finish()'>Ödemeyi Tamamla (Demo)</button><button class='secondary' onclick="show('step2')">Geri Dön</button></section><section id='step4' class='card'><div class='steps'>✓ Plaka → ✓ Tutar → ✓ Demo → 4 Sonuç</div><div class='error'>×</div><h1>Şu Anda Hizmet Veremiyoruz</h1><p>İşleminizi şu anda gerçekleştiremiyoruz.</p><p>HGS bakiye yükleme işlemi için PTT'nin resmi internet sitesi veya resmi mobil uygulamasını kullanabilirsiniz.</p><div class='warning'>Demo ekranı — herhangi bir ücret tahsil edilmemiştir.</div><button onclick='location.reload()'>Başa Dön</button></section></main><footer>HGS Yükleme • Sunum / prototip arayüzü • Resmî PTT sitesi değildir</footer><script src='app.js'></script></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HGS Yükleme Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">
+    <div class="logo">HGS</div>
+    <div><strong>HGS Yükleme Demo</strong><small>PROTOTİP • Gerçek ödeme alınmaz</small></div>
+  </div>
+  <div class="badge">DEMO</div>
+</header>
+
+<main>
+  <div class="steps">
+    <div class="step active" id="s1"><b>1</b><span>Yükleme</span></div>
+    <div class="line"></div>
+    <div class="step" id="s2"><b>2</b><span>Demo Ödeme</span></div>
+    <div class="line"></div>
+    <div class="step" id="s3"><b>3</b><span>Sonuç</span></div>
+  </div>
+
+  <section class="card" id="page1">
+    <p class="eyebrow">HGS BAKİYE YÜKLEME</p>
+    <h1>Plaka ve yükleme tutarı</h1>
+    <p class="muted">Bu ekran yalnızca sunum amaçlı bir prototiptir.</p>
+    <label>Plaka</label>
+    <input id="plate" maxlength="12" placeholder="34 ABC 123" autocomplete="off">
+    <label>Yüklenecek tutar</label>
+    <div class="amounts">
+      <button type="button" data-amount="500">500 TL</button>
+      <button type="button" data-amount="1000">1.000 TL</button>
+      <button type="button" data-amount="2000">2.000 TL</button>
+      <button type="button" data-amount="3000">3.000 TL</button>
+    </div>
+    <button class="primary" id="toPayment">Ödemeye Devam Et</button>
+  </section>
+
+  <section class="card hidden" id="page2">
+    <p class="eyebrow">DEMO ÖDEME</p>
+    <h1>Ödeme bilgileri</h1>
+    <div class="warning"><strong>Test ekranı:</strong> Gerçek kart bilgisi girmeyin. Bu form hiçbir kart verisini kaydetmez veya göndermez.</div>
+    <div class="summary"><span id="summaryPlate">—</span><strong id="summaryAmount">—</strong></div>
+
+    <label>Test kartı</label>
+    <input id="card" inputmode="numeric" value="4242 4242 4242 4242" readonly>
+    <div class="row">
+      <div><label>SKT</label><input value="12/30" readonly></div>
+      <div><label>CVV</label><input value="123" readonly></div>
+    </div>
+    <label>Kart üzerindeki ad</label>
+    <input value="DEMO KULLANICI" readonly>
+    <p class="tiny">Alanlar yalnızca ödeme adımının sunumunu göstermek için sabit test verileridir.</p>
+    <button class="primary" id="pay">Demo Ödemeyi Tamamla</button>
+    <button class="secondary" id="back">Geri Dön</button>
+  </section>
+
+  <section class="card result hidden" id="page3">
+    <div class="errorIcon">!</div>
+    <p class="eyebrow">İŞLEM SONUCU</p>
+    <h1>Şu anda hizmet veremiyoruz</h1>
+    <p>HGS yükleme işleminizi resmi hizmet kanalları veya yetkili mobil uygulama üzerinden gerçekleştirebilirsiniz.</p>
+    <div class="warning">Bu bir <strong>demo/prototip</strong> ekranıdır. Herhangi bir ödeme alınmamıştır ve HGS bakiyesine yükleme yapılmamıştır.</div>
+    <button class="primary" onclick="location.reload()">Başa Dön</button>
+  </section>
+</main>
+
+<footer>HGS Yükleme Demo • Sunum / prototip amaçlıdır • Gerçek ödeme sistemi değildir</footer>
+<script src="app.js"></script>
+</body>
+</html>
