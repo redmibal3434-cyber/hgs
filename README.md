@@ -1,15 +1,14 @@
-# HGS Referans Demo – Logo Ayarlı Admin
+# HGS Referans Demo – 3 Logo
 
-Yeni özellik:
-- Admin panelinde Logo Ayarları bölümü
-- Bilgisayardan PNG/JPG/WebP/GIF logo seçme
-- Alternatif olarak görsel URL'si girme
-- Logo önizleme
-- Kaydet / kaldır
-- Kaydedilen logo müşteri ekranının sol üstünde görünür
+Değişiklikler:
+- Müşteri sayfasındaki "HGS Yükleme Demo / Nötr prototip" yazısı kaldırıldı.
+- Sayfanın en üstünde yan yana 3 logo alanı bulunur.
+- Logo 1, Logo 2 ve Logo 3 admin panelinden ayrı ayrı yönetilir.
+- Her logo bilgisayardan yüklenebilir veya görsel URL'si ile ayarlanabilir.
+- Her logo ayrı ayrı kaldırılabilir.
+- Müşteri tarafında admin bağlantısı gösterilmez.
 
-Admin: admin.html
-Müşteri: index.html
+Admin paneli: admin.html
+Müşteri ekranı: index.html
 
-Demo verileri ve logo ayarı aynı tarayıcının localStorage alanında tutulur.
-Gerçek ödeme veya PTT/HGS entegrasyonu yoktur.
+Logo ve demo işlem verileri yalnızca aynı tarayıcının localStorage alanında tutulur.

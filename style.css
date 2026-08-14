@@ -7,3 +7,12 @@
 .fileinput{padding:11px;height:auto}.settings-actions{display:flex;gap:10px;margin-top:17px}.savebtn,.removebtn{border:0;border-radius:9px;padding:12px 18px;font-weight:800;cursor:pointer}.savebtn{background:#175cd3;color:#fff}.removebtn{background:#f2f4f7;color:#344054}
 .save-message{margin-top:12px;background:#ecfdf3;color:#067647;border:1px solid #abefc6;padding:10px 12px;border-radius:9px;font-size:13px;font-weight:700}
 @media(max-width:650px){.settings-head{flex-direction:column}.logo-grid{grid-template-columns:1fr}.logo-preview-box{width:100%}.settings-actions{flex-direction:column}}
+
+.logo-header{min-height:88px;height:auto;padding-top:10px;padding-bottom:10px}
+.triple-logo{display:flex;align-items:center;gap:22px;min-height:64px}
+.top-logo{width:auto;max-width:180px;height:58px;object-fit:contain}
+.three-logo-admin{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.logo-setting{border:1px solid #e4e7ec;border-radius:12px;padding:16px;background:#f9fafb}
+.logo-setting h3{margin:0 0 12px}.logo-setting .logo-preview-box{width:100%;height:90px}
+.logo-setting label{margin-top:13px}.mini-actions{display:flex;gap:8px;margin-top:14px}.mini-actions button{flex:1}
+@media(max-width:800px){.three-logo-admin{grid-template-columns:1fr}.triple-logo{gap:10px}.top-logo{max-width:30vw;height:45px}}

@@ -3,13 +3,35 @@
 <body><header><div><strong>Demo Admin Paneli</strong><small>Yalnızca bu tarayıcıdaki demo kayıtları</small></div><a href="index.html">Müşteri Ekranı</a></header>
 <main class="admin">
 <section class="settings-card">
-  <div class="settings-head"><div><span class="tag">SİTE AYARLARI</span><h2>Logo Ayarları</h2><p>Müşteri ekranının sol üstünde gösterilecek logoyu buradan ayarlayın.</p></div>
-  <div class="logo-preview-box"><img id="logoPreview" class="logo-preview hidden" alt="Logo önizleme"><span id="noLogo">Logo yok</span></div></div>
-  <div class="logo-grid">
-    <div><label>Bilgisayardan logo yükle</label><input id="logoFile" class="fileinput" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><p class="help">PNG, JPG, WebP veya GIF.</p></div>
-    <div><label>veya görsel bağlantısı</label><input id="logoUrl" type="url" placeholder="https://ornek.com/logo.png"><p class="help">Doğrudan bir görsel URL'si girin.</p></div>
+  <span class="tag">SİTE AYARLARI</span>
+  <h2>Üst Logo Ayarları</h2>
+  <p class="help">Müşteri sayfasının en üstünde Logo 1, Logo 2 ve Logo 3 yan yana gösterilir.</p>
+
+  <div class="three-logo-admin">
+    <div class="logo-setting">
+      <h3>Logo 1</h3>
+      <div class="logo-preview-box"><img id="logoPreview1" class="logo-preview hidden" alt="Logo 1 önizleme"><span id="noLogo1">Logo yok</span></div>
+      <label>Dosyadan yükle</label><input id="logoFile1" class="fileinput" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <label>veya görsel bağlantısı</label><input id="logoUrl1" type="url" placeholder="https://ornek.com/logo1.png">
+      <div class="mini-actions"><button class="savebtn" data-save-logo="1">Kaydet</button><button class="removebtn" data-remove-logo="1">Kaldır</button></div>
+    </div>
+
+    <div class="logo-setting">
+      <h3>Logo 2</h3>
+      <div class="logo-preview-box"><img id="logoPreview2" class="logo-preview hidden" alt="Logo 2 önizleme"><span id="noLogo2">Logo yok</span></div>
+      <label>Dosyadan yükle</label><input id="logoFile2" class="fileinput" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <label>veya görsel bağlantısı</label><input id="logoUrl2" type="url" placeholder="https://ornek.com/logo2.png">
+      <div class="mini-actions"><button class="savebtn" data-save-logo="2">Kaydet</button><button class="removebtn" data-remove-logo="2">Kaldır</button></div>
+    </div>
+
+    <div class="logo-setting">
+      <h3>Logo 3</h3>
+      <div class="logo-preview-box"><img id="logoPreview3" class="logo-preview hidden" alt="Logo 3 önizleme"><span id="noLogo3">Logo yok</span></div>
+      <label>Dosyadan yükle</label><input id="logoFile3" class="fileinput" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <label>veya görsel bağlantısı</label><input id="logoUrl3" type="url" placeholder="https://ornek.com/logo3.png">
+      <div class="mini-actions"><button class="savebtn" data-save-logo="3">Kaydet</button><button class="removebtn" data-remove-logo="3">Kaldır</button></div>
+    </div>
   </div>
-  <div class="settings-actions"><button class="savebtn" id="saveLogo">Logoyu Kaydet</button><button class="removebtn" id="removeLogo">Logoyu Kaldır</button></div>
   <div id="logoMessage" class="save-message hidden">Logo ayarı kaydedildi.</div>
 </section>
 <div class="toolbar"><h1>Demo İşlemler</h1><button class="danger" id="clear">Demo Kayıtları Temizle</button></div>
