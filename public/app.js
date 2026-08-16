@@ -9,7 +9,7 @@ async function settings(){try{
  const map={
   txtHomeTitle:'home_title',txtHgsTitle:'hgs_title',txtHgsDesc:'hgs_desc',
   txtKmTitle:'km_title',txtKmDesc:'km_desc',txtRefTitle:'ref_title',
-  txtRefLabel:'ref_label',txtErrorTitle:'error_title',txtErrorDesc:'error_desc'
+  txtRefLabel:'ref_label',txtCodeLabel:'code_label',txtErrorTitle:'error_title',txtErrorDesc:'error_desc'
  };
  Object.entries(map).forEach(([id,key])=>{const el=q('#'+id);if(el && (s[key]||'').trim())el.textContent=s[key]});
 }catch(e){}}

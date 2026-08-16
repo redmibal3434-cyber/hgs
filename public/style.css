@@ -10,3 +10,7 @@
 .text-setting p{color:#667085;font-size:13px;line-height:1.5}
 textarea{width:100%;min-height:110px;border:1px solid #c7d0dc;border-radius:8px;padding:13px 14px;font:inherit;resize:vertical}
 textarea:focus{outline:3px solid #e6efff;border-color:#175cd3}
+
+/* Üst logoları footer logoları gibi tam ortala */
+header{justify-content:center}
+header .logos{justify-content:center;margin-left:auto;margin-right:auto}
