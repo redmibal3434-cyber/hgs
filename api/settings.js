@@ -1,0 +1,3 @@
+const {db,auth,json}=require('./_lib');
+module.exports=async(req,res)=>{const s=db();if(req.method==='GET'){const {data,error}=await s.from('settings').select('key,value');if(error)return json(res,500,{error:error.message});return json(res,200,Object.fromEntries((data||[]).map(x=>[x.key,x.value])))}
+if(req.method==='POST'){if(!auth(req))return json(res,401,{error:'Yetkisiz'});const body=req.body||{};const rows=Object.entries(body).map(([key,value])=>({key,value:String(value||'')}));const {error}=await s.from('settings').upsert(rows,{onConflict:'key'});if(error)return json(res,500,{error:error.message});return json(res,200,{ok:true})}json(res,405,{error:'method'})};
