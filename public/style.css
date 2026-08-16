@@ -5,3 +5,8 @@
 .order-summary span{display:block;color:#667085;font-size:12px;font-weight:700;margin-bottom:6px}
 .order-summary strong{display:block;font-size:18px;color:#172033}
 @media(max-width:600px){.order-summary{grid-template-columns:1fr}}
+
+.text-setting{margin-top:28px;padding-top:22px;border-top:1px solid #d8e0e9}
+.text-setting p{color:#667085;font-size:13px;line-height:1.5}
+textarea{width:100%;min-height:110px;border:1px solid #c7d0dc;border-radius:8px;padding:13px 14px;font:inherit;resize:vertical}
+textarea:focus{outline:3px solid #e6efff;border-color:#175cd3}

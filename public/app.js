@@ -1,5 +1,12 @@
 let service=null,amount=null;const q=s=>document.querySelector(s);
-async function settings(){try{let r=await fetch('/api/settings'),s=await r.json();renderLogos('topLogos',[s.top1,s.top2,s.top3]);renderLogos('footerLogos',[s.foot1,s.foot2,s.foot3])}catch(e){}}
+async function settings(){try{
+ let r=await fetch('/api/settings'),s=await r.json();
+ renderLogos('topLogos',[s.top1,s.top2,s.top3]);
+ renderLogos('footerLogos',[s.foot1,s.foot2,s.foot3]);
+ const notice=q('#referenceNotice');
+ const text=(s.reference_notice||'').trim();
+ if(notice){notice.textContent=text;notice.classList.toggle('hide',!text);}
+}catch(e){}}
 function renderLogos(id,a){q('#'+id).innerHTML=a.filter(Boolean).map(x=>`<img src="${x.replace(/"/g,'&quot;')}" alt="">`).join('')}
 document.querySelectorAll('[data-service]').forEach(b=>b.onclick=()=>start(b.dataset.service));document.querySelectorAll('[data-a]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-a]').forEach(x=>x.classList.remove('sel'));b.classList.add('sel');amount=b.dataset.a});
 function start(t){service=t;amount=null;q('#home').classList.add('hide');q('#s1').classList.remove('hide');q('#amountArea').classList.toggle('hide',t!=='hgs');q('#flowTitle').textContent=t==='hgs'?'HGS Bakiye Yükleme':'KM Sorgu - Hasar Sorgu'}

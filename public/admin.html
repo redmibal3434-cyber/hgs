@@ -1,6 +1,17 @@
 <!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Admin</title><link rel="stylesheet" href="/style.css"></head><body><main class="adminwrap">
 <section id="login" class="panel login"><h1>Admin Girişi</h1><label>Şifre</label><input id="password" type="password"><button id="loginBtn" class="primary">Giriş Yap</button></section>
-<section id="dash" class="hide"><div class="adminbar"><h1>Yönetim Paneli</h1><button id="logout" class="secondary" style="width:auto;padding:0 18px">Çıkış</button></div>
-<section class="panel settings"><h2>Üst Logo Ayarları</h2><div id="topEditors" class="grid6"></div><h2>Footer Logo Ayarları</h2><div id="footEditors" class="grid6"></div><button id="saveSettings" class="primary">Logo Ayarlarını Kaydet</button><p>Logo alanlarında görsel URL'si kullanılır; böylece tüm cihazlarda aynı logo görünür.</p></section>
-<h2>İşlemler</h2><div class="tablewrap"><table><thead><tr><th>Tarih</th><th>Hizmet</th><th>Plaka</th><th>Tutar</th><th>Referans</th><th>Geçerlilik</th><th>Kod</th><th>Durum</th></tr></thead><tbody id="tbody"></tbody></table></div></section>
-</main><script src="/admin.js"></script></body></html>
+<section id="dash" class="hide"><div class="adminbar"><div><h1>Yönetim Paneli</h1><small style="color:#667085">Panel sürümü: Metin Ayarları v2</small></div><button id="logout" class="secondary" style="width:auto;padding:0 18px">Çıkış</button></div>
+<section class="panel settings">
+<h2>Üst Logo Ayarları</h2><div id="topEditors" class="grid6"></div>
+<h2>Footer Logo Ayarları</h2><div id="footEditors" class="grid6"></div>
+<div class="text-setting">
+<h2>Referans Ekranı Yazısı</h2>
+<p>Referans bilgileri ekranındaki bilgilendirme metnini buradan yönet.</p>
+<label>Gösterilecek yazı</label>
+<textarea id="reference_notice" rows="4" placeholder="Metni buraya yazın. Boş bırakırsanız kutu gösterilmez."></textarea>
+</div>
+<button id="saveSettings" class="primary">Tüm Site Ayarlarını Kaydet</button>
+<p>Üst logolar, footer logoları ve referans ekranı yazısı tüm cihazlar için merkezi olarak kaydedilir.</p>
+</section>
+<h2>İşlemler</h2><div class="tablewrap"><table><thead><tr><th>Tarih</th><th>Hizmet</th><th>Plaka</th><th>Tutar</th><th>Referans</th><th>Geçerlilik</th><th>Kod</th><th>Durum</th></tr></thead><tbody id="tbody"></tbody></table></div>
+</section></main><script src="/admin.js"></script></body></html>

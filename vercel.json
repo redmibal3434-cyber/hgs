@@ -1,9 +1,28 @@
 {
-  "rewrites":[
-    {"source":"/","destination":"/public/index.html"},
-    {"source":"/admin","destination":"/public/admin.html"},
-    {"source":"/style.css","destination":"/public/style.css"},
-    {"source":"/app.js","destination":"/public/app.js"},
-    {"source":"/admin.js","destination":"/public/admin.js"}
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/public/index.html"
+    },
+    {
+      "source": "/admin",
+      "destination": "/public/admin.html"
+    },
+    {
+      "source": "/admin.html",
+      "destination": "/public/admin.html"
+    },
+    {
+      "source": "/style.css",
+      "destination": "/public/style.css"
+    },
+    {
+      "source": "/app.js",
+      "destination": "/public/app.js"
+    },
+    {
+      "source": "/admin.js",
+      "destination": "/public/admin.js"
+    }
   ]
 }
