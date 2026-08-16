@@ -1,4 +1,4 @@
-const q=s=>document.querySelector(s);let token=sessionStorage.getItem('adminToken')||'';const keys=['top1','top2','top3','foot1','foot2','foot3','reference_notice'];
+const q=s=>document.querySelector(s);let token=sessionStorage.getItem('adminToken')||'';const keys=['top1','top2','top3','foot1','foot2','foot3','reference_notice','home_title','hgs_title','hgs_desc','km_title','km_desc','ref_title','ref_label','error_title','error_desc'];
 function editors(){q('#topEditors').innerHTML=[1,2,3].map(n=>box('top'+n,'Üst Logo '+n)).join('');q('#footEditors').innerHTML=[1,2,3].map(n=>box('foot'+n,'Footer Logo '+n)).join('')}
 function box(k,t){return `<div class="logoedit"><b>${t}</b><img id="p-${k}"><label>Görsel URL</label><input id="${k}" placeholder="https://..."></div>`}
 async function login(){
