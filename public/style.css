@@ -14,3 +14,6 @@ textarea:focus{outline:3px solid #e6efff;border-color:#175cd3}
 /* Üst logoları footer logoları gibi tam ortala */
 header{justify-content:center}
 header .logos{justify-content:center;margin-left:auto;margin-right:auto}
+
+.customer-info{margin:18px 0;padding:16px;border:1px solid #d8e0e9;border-radius:10px;background:#f8fafc}
+.customer-info label:first-child{margin-top:0}
